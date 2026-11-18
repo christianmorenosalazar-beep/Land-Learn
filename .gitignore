@@ -1,0 +1,15 @@
+# Datos de conexión reales
+php/config.php
+
+# Herramienta de diagnóstico local (muestra información de la base de datos)
+php/diagnostico.php
+
+# Respaldos de la base de datos con datos reales
+*.sql.bak
+backup*.sql
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

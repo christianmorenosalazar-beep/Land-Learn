@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso 5 - Algoritmo de Comunidad</title>
+    <link rel="stylesheet" href="css/comunidad.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <h2>Radar de Trueques (Comunidad)</h2>
+    <p>Define los parámetros de tu trueque para que el algoritmo busque en la BD 'integradora'.</p>
+
+    <form action="motor_matches.html" method="GET">
+        
+        <label>¿Qué habilidad OFRECES enseñar?</label><br>
+        <select name="habilidad_ofrecida" required>
+            <option value="Desarrollo Web">Desarrollo Web</option>
+            <option value="Diseño UI/UX">Diseño UI/UX</option>
+            <option value="Bases de Datos">Bases de Datos</option>
+            <option value="Redes Cisco">Redes Cisco</option>
+        </select><br><br>
+
+        <label>¿Qué habilidad BUSCAS aprender?</label><br>
+        <select name="habilidad_buscada" required>
+            <option value="Bases de Datos">Bases de Datos</option>
+            <option value="Diseño UI/UX">Diseño UI/UX</option>
+            <option value="Desarrollo Web">Desarrollo Web</option>
+            <option value="Redes Cisco">Redes Cisco</option>
+        </select><br><br>
+
+        <button type="submit">Buscar Matches en la Red Mycelium</button>
+        
+    </form>
+    <script src="js/seguridad.js"></script>
+</body>
+</html>

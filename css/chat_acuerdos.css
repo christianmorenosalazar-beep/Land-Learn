@@ -1,0 +1,140 @@
+body { 
+    margin: 0; 
+    overflow: hidden; 
+    background-color: #f4f9f9; 
+}
+
+.chat-acuerdos-layout { 
+    display: flex; 
+    height: calc(100vh - 70px); 
+    width: 100%; 
+}
+
+.panel-metas { 
+    flex: 4; 
+    padding: 25px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    overflow-y: auto; 
+    background-color: #f4f9f9; 
+}
+
+.sub-panel-tareas { 
+    background: #ffffff; 
+    padding: 20px; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 25px rgba(9, 60, 92, 0.03); 
+    border-top: 4px solid #2ab5b9; 
+}
+
+.sub-panel-tareas.completadas { 
+    border-top-color: #fbbf24; 
+}
+
+.tarea-checkbox-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    background: #f8fafc; 
+    padding: 12px; 
+    border-radius: 10px; 
+    border: 1px solid #e2e8f0; 
+    margin-bottom: 8px; 
+}
+
+.btn-entrar-sala { 
+    background: #093c5c; 
+    color: white; 
+    border: none; 
+    padding: 14px 28px; 
+    border-radius: 12px; 
+    font-weight: bold; 
+    font-family: 'Urbanist', sans-serif; 
+    cursor: pointer; 
+    box-shadow: 0 5px 15px rgba(9, 60, 92, 0.15); 
+    transition: 0.3s; 
+    width: 100%; 
+}
+.btn-entrar-sala:hover { 
+    background: #06243a; 
+    transform: translateY(-2px); 
+}
+
+.panel-mensajero { 
+    flex: 6; 
+    background: #ffffff; 
+    border-left: 2px solid #e2e8f0; 
+    display: flex; 
+    flex-direction: column; 
+    box-shadow: -5px 0 15px rgba(0,0,0,0.01); 
+}
+
+.mensajero-header { 
+    padding: 20px; 
+    border-bottom: 1px solid #e2e8f0; 
+    background: #ffffff; 
+}
+
+.mensajero-cuerpo { 
+    flex: 1; 
+    padding: 20px; 
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    background: #f8fafc; 
+}
+
+.burbuja { 
+    max-width: 80%; 
+    padding: 12px 16px; 
+    border-radius: 14px; 
+    font-size: 0.95rem; 
+    line-height: 1.4; 
+}
+.burbuja.mia { 
+    align-self: flex-end; 
+    background: #093c5c; 
+    color: white; 
+    border-bottom-right-radius: 2px; 
+}
+.burbuja.otra { 
+    align-self: flex-start; 
+    background: #e2e8f0; 
+    color: #334155; 
+    border-bottom-left-radius: 2px; 
+}
+
+.mensajero-input-area { 
+    padding: 15px; 
+    background: white; 
+    border-top: 1px solid #e2e8f0; 
+    display: flex; 
+    gap: 10px; 
+}
+
+.input-texto { 
+    flex: 1; 
+    padding: 12px 15px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 24px; 
+    outline: none; 
+    font-family: 'Urbanist', sans-serif; 
+}
+.input-texto:focus { border-color: #2ab5b9; }
+
+.btn-enviar-msg { 
+    background: #2ab5b9; 
+    color: white; 
+    border: none; 
+    width: 44px; 
+    height: 44px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: 0.2s; 
+}
+.btn-enviar-msg:hover { background: #1f8a8d; transform: scale(1.05); }

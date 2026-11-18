@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Learn - Mi Perfil</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Hojas de estilo separadas -->
+    <link rel="stylesheet" href="dolor_de_wbs.css"> 
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="bg-premium">
+
+    <!-- HEADER -->
+    <header class="header-premium">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo Land Learn" class="logo-img">
+            <span class="logo-land">Land</span><span class="logo-learn">Learn</span>
+        </div>
+        <nav class="nav-premium">
+            <a href="dashboard.html">Radar</a>
+            <a href="Evaluacion_Usu.html">Evaluación</a>
+            <a href="notificaciones.html">Buzón</a>
+            <a href="login.html" class="btn-logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-container">
+        
+        <!-- PESTAÑAS -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" data-target="info">Mi Perfil</button>
+            <button class="tab-btn" data-target="chat">Mis Chats Activos</button>
+        </div>
+
+        <!-- PESTAÑA 1: MIS DATOS -->
+        <div id="info" class="tab-content active">
+            
+            <!-- TARJETA PRINCIPAL (Foto y Bio) -->
+            <section class="tarjeta-perfil tarjeta-principal">
+                <div class="foto-perfil-contenedor">
+                    <img src="img/default-avatar.png" alt="Foto de perfil" class="foto-perfil" id="foto-usuario"
+                         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22&gt;&lt;circle cx=%22100%22 cy=%22100%22 r=%22100%22 fill=%22%23d1e9ea%22/&gt;&lt;circle cx=%22100%22 cy=%2278%22 r=%2236%22 fill=%22%232ab5b9%22/&gt;&lt;path d=%22M40 175a60 60 0 01120 0z%22 fill=%22%232ab5b9%22/&gt;&lt;/svg&gt;'">
+                    <span id="rango-usuario" class="tag-nivel nivel-default">Cargando rango...</span>
+                </div>
+                
+                <div class="info-perfil">
+                    <h1 id="nombre-usuario" class="nombre-usuario">Cargando usuario...</h1>
+                    <p id="titulo-usuario" class="titulo-usuario">Sincronizando con la base de datos...</p>
+                    <p id="biografia-usuario" class="biografia-usuario">
+                        Esperando biografía...
+                        <div class="progreso-container" style="margin-top: 20px; border: 1px solid rgba(42, 181, 185, 0.2); padding: 15px; border-radius: 12px;">
+    <p class="nivel-texto" style="display: flex; justify-content: space-between; color: #2ab5b9; font-weight: bold; margin-bottom: 8px;">
+        <span id="txt-rango-nivel">Nivel: Cargando...</span>
+        <span id="txt-xp-numerico">0 / 0 XP</span>
+    </p>
+    <div class="barra-experiencia-bg" style="width: 100%; height: 8px; background: #1e293b; border-radius: 10px; overflow: hidden;">
+        <div id="progreso-xp" class="barra-experiencia-fill" style="height: 100%; background: #2ab5b9; width: 0%; transition: width 0.5s;"></div>
+    </div>
+</div>
+                    </p>
+                    <div class="botones-perfil">
+                        <button onclick="window.location.href='dashboard.html'" class="btn-primario">
+                            <i class="fa-solid fa-radar"></i> Buscar Intercambio
+                        </button>
+                        <button id="btn-abrir-editar-perfil" style="background: #093c5c; color: white; border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer; font-family: 'Urbanist'; font-weight: bold;">
+    <i class="fa-solid fa-pen"></i> Editar Perfil
+</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GRID DE HABILIDADES Y BUSQUEDAS -->
+            <div class="grid-habilidades">
+                
+                <!-- LO QUE OFREZCO -->
+                <section class="tarjeta-perfil tarjeta-ofrezco">
+                    <h3 class="titulo-seccion"><span class="icono-seccion">💎</span> Mis Habilidades</h3>
+                    <ul class="lista-habilidades" id="lista-habilidades">
+                        <!-- El JS de PHP inyectará los <li> aquí -->
+                        <li class="habilidad-item">Consultando habilidades...</li>
+                    </ul>
+                    <button class="btn-secundario btn-full" onclick="window.location.href='Evaluacion_Usu.html'">Certificar nueva habilidad</button>
+                </section>
+
+                <!-- LO QUE BUSCO -->
+                <section class="tarjeta-perfil tarjeta-busco">
+                    <h3 class="titulo-seccion"><span class="icono-seccion">🎯</span> Quiero Aprender</h3>
+                    <div class="contenedor-tags" id="lista-busquedas">
+                        <!-- El JS de PHP inyectará los <span> aquí -->
+                        <span class="tag-busqueda">Consultando intereses...</span>
+                    </div>
+                    <p class="frase-micelio">"El aprendizaje es un micelio que nunca deja de extenderse."</p>
+                </section>
+            </div>
+
+            <!-- HISTORIAL DE INTERCAMBIOS -->
+            
+                <!-- Insignias de habilidades certificadas (examen de 150 preguntas) -->
+                <section class="tarjeta-perfil">
+                    <h3 class="titulo-seccion"><span class="icono-seccion">🏆</span> Habilidades Certificadas</h3>
+                    <div id="contenedor-certificaciones">
+                        <p style="color:#9ca3af;font-size:.88rem;font-style:italic;">Consultando certificaciones...</p>
+                    </div>
+                </section>
+<section class="tarjeta-perfil tarjeta-historial">
+    <h3 class="titulo-seccion">🌱 Mis últimos intercambios</h3>
+    <div id="contenedor-historial-calificaciones">
+        <p style="color: #9ca3af; font-size: 0.9rem; font-style: italic;">Consultando historial de evaluaciones...</p>
+    </div>
+</section>
+
+        </div>
+
+        <!-- PESTAÑA 2: CHATS ACTIVOS -->
+        <div id="chat" class="tab-content">
+            <div id="lista-chats-activos">
+                <!-- Estado vacío por defecto, el JS lo sobrescribe si hay chats -->
+                <div class="estado-vacio">
+                    <i class="fa-solid fa-ghost icono-vacio"></i>
+                    <p class="texto-vacio-principal">No tienes chats activos de momento.</p>
+                    <p class="texto-vacio-secundario">Cuando aceptes una propuesta en tu Buzón, aparecerá aquí el canal de comunicación.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div id="modal-evaluacion" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(9, 60, 92, 0.8); align-items: center; justify-content: center; z-index: 9999; backdrop-filter: blur(5px);">
+    <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; width: 90%; max-width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+        <h2 style="color: #093c5c; font-family: 'Poppins'; margin-top: 0;">Sala Finalizada 🍄</h2>
+        <p style="color: #64748b;">¿Qué te pareció el trueque de conocimiento?</p>
+        
+        <form id="form-evaluacion">
+            <select name="puntuacion" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #2ab5b9; margin-bottom: 20px; font-weight: bold; color: #093c5c; text-align: center;">
+                <option value="5">⭐⭐⭐⭐⭐ Excelente (+50 XP)</option>
+                <option value="4">⭐⭐⭐⭐ Muy Bueno</option>
+                <option value="3">⭐⭐⭐ Bueno</option>
+                <option value="2">⭐⭐ Regular</option>
+                <option value="1">⭐ Necesita Mejorar</option>
+            </select>
+            
+            <textarea name="comentario" rows="3" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #d1e9ea; margin-bottom: 20px;" placeholder="Deja un comentario para tu compañero..."></textarea>
+            
+            <button type="submit" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background: #2ab5b9; color: white; font-weight: bold; font-family: 'Urbanist'; cursor: pointer; font-size: 1.1rem;">
+                Enviar Evaluación y Salir
+            </button>
+        </form>
+    </div>
+</div>
+
+
+    <script src="js/seguridad.js"></script>
+    <script src="js/perfil.js"></script>
+
+<!-- ══════════════════════════════════════════
+     MODAL: EDITAR PERFIL
+     Se abre con el boton "Editar Perfil".
+     perfil.js precarga los campos y envia a actualizar_perfil.php
+══════════════════════════════════════════ -->
+<div id="modal-editar-perfil" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(9,60,92,0.7); backdrop-filter:blur(5px); align-items:center; justify-content:center; z-index:9999;">
+    <div style="background:white; padding:30px; border-radius:20px; width:90%; max-width:460px; box-shadow:0 15px 35px rgba(0,0,0,0.2); border:1px solid #d1e9ea;">
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:2px solid #2ab5b9; padding-bottom:10px;">
+            <h2 style="color:#093c5c; font-family:'Poppins',sans-serif; margin:0; font-size:1.4rem;">Editar Mi Perfil 🍄</h2>
+            <button type="button" id="btn-cerrar-modal-x" style="background:none; border:none; font-size:1.4rem; color:#64748b; cursor:pointer; line-height:1;">&times;</button>
+        </div>
+
+        <form id="form-editar-perfil">
+
+            <!-- Biografia -->
+            <div style="margin-bottom:15px;">
+                <label style="color:#093c5c; font-weight:bold; font-size:0.9rem; display:block; margin-bottom:5px;">Mi Biografia Micologica:</label>
+                <textarea id="edit-biografia" name="biografia" rows="3"
+                    style="width:100%; padding:10px; border-radius:8px; border:1px solid #cbd5e1; outline:none; font-family:'Urbanist',sans-serif; resize:none; box-sizing:border-box;"
+                    placeholder="Cuentale a la comunidad que te apasiona aprender o ensenar..."></textarea>
+            </div>
+
+            <!-- Lo que ofrece -->
+            <div style="margin-bottom:15px;">
+                <label style="color:#093c5c; font-weight:bold; font-size:0.9rem; display:block; margin-bottom:5px;">Mis Habilidades / Disponibilidad:</label>
+                <input type="text" id="edit-disponibilidad" name="disponibilidad"
+                    style="width:100%; padding:10px; border-radius:8px; border:1px solid #cbd5e1; outline:none; font-family:'Urbanist',sans-serif; box-sizing:border-box;"
+                    placeholder="Ej. PHP, MySQL | 2-4 horas por semana">
+            </div>
+
+            <!-- Lo que busca -->
+            <div style="margin-bottom:20px;">
+                <label style="color:#093c5c; font-weight:bold; font-size:0.9rem; display:block; margin-bottom:5px;">Lo que quiero aprender:</label>
+                <input type="text" id="edit-match-ideal" name="match_ideal"
+                    style="width:100%; padding:10px; border-radius:8px; border:1px solid #cbd5e1; outline:none; font-family:'Urbanist',sans-serif; box-sizing:border-box;"
+                    placeholder="Ej. Diseno UX, Mecanica automotriz">
+            </div>
+
+            <div style="display:flex; gap:10px; justify-content:flex-end;">
+                <button type="button" id="btn-cancelar-modal"
+                    style="padding:10px 18px; border-radius:8px; border:none; background:#e2e8f0; color:#475569; font-weight:bold; cursor:pointer; font-family:'Urbanist',sans-serif;">Cancelar</button>
+                <button type="submit" id="btn-guardar-perfil"
+                    style="padding:10px 18px; border-radius:8px; border:none; background:#2ab5b9; color:white; font-weight:bold; cursor:pointer; font-family:'Urbanist',sans-serif;">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

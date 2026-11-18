@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar Mycelium - Land Learn</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="dolor_de_wbs.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background-color: #f4f9f9; font-family: 'Urbanist', sans-serif; margin: 0;">
+
+    <header style="background-color: white; padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(9, 60, 92, 0.04);">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="img/logo.png" alt="Logo Land Learn" style="width: 40px; border-radius: 8px;">
+            <span style="color: #093c5c; font-weight: 700; font-size: 1.8rem; font-family: 'Poppins', sans-serif;">Land</span><span style="color: #2ab5b9; font-size: 1.8rem; font-family: 'Poppins', sans-serif;">Learn</span>
+        </div>
+        <nav class="menu-principal" style="display: flex; gap: 2rem;">
+            <a href="my_perfil.html" style="text-decoration: none; color: #64748b; font-weight: 600;">Mi Perfil</a>
+            <a href="dashboard.html" style="text-decoration: none; color: #2ab5b9; font-weight: 700;">Radar de Matches</a>
+            <a href="Evaluacion_Usu.html">Evaluación</a>
+            <a href="login.html" id="btn-cerrar-sesion" style="text-decoration: none; color: #ef4444; font-weight: bold;">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 900px; margin: 3rem auto; padding: 0 2rem;">
+        
+        <section style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 2.5rem; border-top: 6px solid #2ab5b9; margin-bottom: 3rem;">
+            <h2 style="color: #093c5c; font-family: 'Poppins', sans-serif; margin-top: 0; margin-bottom: 5px;">Filtrar Conocimiento 📡</h2>
+            <p style="color: #64748b; margin-bottom: 2rem;">Selecciona los parámetros para conectar con tu match ideal.</p>
+            
+            <form action="motor_matches.html" method="GET" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div>
+                        <label style="color: #093c5c; font-weight: 600; display: block; margin-bottom: 0.5rem;">¿Qué ofreces?</label>
+                        <select id="select-ofrezco" name="habilidad_ofrecida" required style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: 'Urbanist', sans-serif;">
+                            <option value="" disabled selected>Cargando habilidades...</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="color: #093c5c; font-weight: 600; display: block; margin-bottom: 0.5rem;">¿Qué buscas?</label>
+                        <select id="select-busco" name="habilidad_buscada" required style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: 'Urbanist', sans-serif;">
+                            <option value="" disabled selected>Cargando habilidades...</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" style="background: #093c5c; color: white; border: none; padding: 14px; border-radius: 10px; font-weight: bold; font-size: 1.1rem; cursor: pointer; font-family: 'Urbanist', sans-serif; margin-top: 1rem;">Encender Algoritmo Mycelium</button>
+            </form>
+        </section>
+
+        <section>
+            <h3 style="color: #093c5c; font-family: 'Poppins', sans-serif; font-size: 1.6rem; margin-bottom: 1.5rem;">👥 Miembros disponibles en la Red</h3>
+            
+            <div id="contenedor-comunidad" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <p style="color: #64748b; font-style: italic;">Sincronizando con los nodos de la Red Mycelium...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/seguridad.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

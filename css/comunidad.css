@@ -1,0 +1,19 @@
+7. COMUNIDAD Y TABLAS DE HABILIDADES
+main { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+.seccion { display: none; animation: pageFadeIn 0.4s ease-in-out; }
+.seccion.activa { display: block; }
+.encabezado-seccion { text-align: center; margin-bottom: 3rem; }
+
+.grid-perfiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+.tarjeta-perfil { background-color: var(--white); border-radius: 16px; padding: 2rem; box-shadow: 0 10px 25px rgba(9, 60, 92, 0.05); border-bottom: 5px solid var(--color-learn-cyan); transition: transform var(--transition-smooth); }
+.tarjeta-perfil:hover { transform: translateY(-5px); }
+
+.avatar { width: 60px; height: 60px; border-radius: 50%; background-color: var(--color-learn-cyan); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; border: 3px solid var(--color-land-dark); }
+.info-basica h3 { color: var(--color-land-dark); margin-bottom: 0.2rem; }
+
+.lista-habilidades { list-style: none; }
+.habilidad-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; background-color: var(--bg-light); padding: 0.8rem; border-radius: 8px; }
+.tag-nivel { padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+.nivel-espora { background-color: var(--white); color: var(--text-light); border: 1px solid #cbd5e1; }
+.nivel-micelio { background-color: #e6fffa; color: #008080; border: 1px solid #b2f5ea; }
+.nivel-fructificacion { background-color: #fffbeb; color: #92400e; border: 1px solid #fef3c7; }

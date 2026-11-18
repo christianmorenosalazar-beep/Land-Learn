@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurando tu ADN - Land Learn</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="dolor_de_wbs.css?v=4">
+    <link rel="stylesheet" href="css/onboarding.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="onboarding-body">
+
+    <div class="micelio-bg"></div>
+
+    <div class="onboarding-container">
+        
+        <div class="progress-bar">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+        </div>
+
+        <div class="step active" id="step-1">
+            <h2>¿Qué buscas aprender?</h2>
+            <p>Selecciona el área que quieres que el micelio conecte contigo.</p>
+            <div class="options-grid">
+                <div class="option-card" data-value="Digital / IT">
+                    <i class="fa-solid fa-code"></i> Digital / IT
+                </div>
+                <div class="option-card" data-value="Técnico">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> Técnico
+                </div>
+                <div class="option-card" data-value="Artes">
+                    <i class="fa-solid fa-palette"></i> Artes
+                </div>
+                <div class="option-card" data-value="Idiomas">
+                    <i class="fa-solid fa-language"></i> Idiomas
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step-2">
+            <h2>Tu nivel actual</h2>
+            <p>¿En qué etapa de crecimiento te encuentras en esta habilidad?</p>
+            <div class="options-grid">
+                <div class="option-card" data-value="Espora (Básico)">
+                    <i class="fa-solid fa-seedling"></i> Espora (Básico)
+                </div>
+                <div class="option-card" data-value="Micelio (Medio)">
+                    <i class="fa-solid fa-hubspot"></i> Micelio (Medio)
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step-3">
+            <h2>Tu match ideal</h2>
+            <p>¿Con qué tipo de compañeros prefieres conectar?</p>
+            <div class="options-grid">
+                <div class="option-card" data-value="Experto (Mentor)">
+                    <i class="fa-solid fa-chalkboard-user"></i> Experto (Mentor)
+                </div>
+                <div class="option-card" data-value="Pares (Aprender juntos)">
+                    <i class="fa-solid fa-people-group"></i> Pares (Aprender juntos)
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step-4">
+            <h2>Compromiso</h2>
+            <p>¿Cuánto tiempo dedicarás a la red semanalmente?</p>
+            <div class="options-grid">
+                <div class="option-card" data-value="2-4 Horas">
+                    <i class="fa-solid fa-clock"></i> 2-4 Horas
+                </div>
+                <div class="option-card" data-value="5+ Horas">
+                    <i class="fa-solid fa-bolt"></i> 5+ Horas
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn-back" id="btnBack" style="display: none;">Atrás</button>
+            <button class="btn-next" id="btnNext">Siguiente</button>
+        </div>
+        
+    </div>
+
+    <!-- Asegúrate de que esta ruta apunte a tu nuevo archivo JS -->
+    <script src="js/seguridad.js"></script>
+    <script src="js/conocer_us.js"></script>
+</body>
+</html>

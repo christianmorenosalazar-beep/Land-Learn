@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Learn - Centro de Evaluación</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="dolor_de_wbs.css?v=13">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background-color: #f4f9f9; font-family: 'Urbanist', sans-serif; margin: 0;">
+
+    <header>
+        <div class="logo">
+            <span class="logo-land">Land</span><span class="logo-learn">Learn</span>
+        </div>
+        <nav class="menu-principal">
+            <a href="my_perfil.html" style="font-weight: bold; color: #2ab5b9;">← Volver al Inicio</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="vista-seleccion" class="seccion activa">
+            
+            <div class="eval-hero" style="padding-bottom: 7rem; padding-top: 4rem;">
+                <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 3rem;">Centro de Evaluación</h1>
+                <p style="opacity: 0.9; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">El algoritmo necesita conocer tus raíces. Selecciona una disciplina, demuestra tu nivel y encuentra tu match perfecto.</p>
+            </div>
+
+            <div class="eval-grid">
+    <div class="skill-node" onclick="iniciarTest('Diseño Web')">
+        <div class="node-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Desarrollo Web</h3>
+        <p>Lógica digital y sintaxis.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+
+    <div class="skill-node" onclick="iniciarTest('Mecánica')">
+        <div class="node-icon"><i class="fa-solid fa-motorcycle"></i></div>
+        <h3>Mecánica</h3>
+        <p>Motores y mantenimiento.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+
+    <div class="skill-node" onclick="iniciarTest('Matemáticas')">
+        <div class="node-icon"><i class="fa-solid fa-calculator"></i></div>
+        <h3>Matemáticas</h3>
+        <p>Cálculo y álgebra pura.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+
+    <div class="skill-node" onclick="iniciarTest('Física')">
+        <div class="node-icon"><i class="fa-solid fa-atom"></i></div>
+        <h3>Física</h3>
+        <p>Mecánica clásica y energía.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+
+    <div class="skill-node" onclick="iniciarTest('Química')">
+        <div class="node-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>Química</h3>
+        <p>Enlaces y compuestos.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+
+    <div class="skill-node" onclick="iniciarTest('Gastronomía')">
+        <div class="node-icon"><i class="fa-solid fa-utensils"></i></div>
+        <h3>Gastronomía</h3>
+        <p>Técnicas y cocciones.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+
+    <div class="skill-node" onclick="iniciarTest('Diseño Gráfico')">
+        <div class="node-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>Diseño Gráfico</h3>
+        <p>Composición y color.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+
+    <div class="skill-node" onclick="iniciarTest('Herrería y Soldadura')">
+        <div class="node-icon"><i class="fa-solid fa-hammer"></i></div>
+        <h3>Herrería y Soldadura</h3>
+        <p>Forja, SMAW y seguridad.</p>
+        <button class="btn-start">Iniciar Test</button>
+    </div>
+</div>
+        </section>
+
+        <section id="vista-cuestionario" class="seccion">
+            <div class="cuestionario-wrapper">
+                <button class="btn-volver-premium" onclick="volverSeleccion()">
+                    <i class="fa-solid fa-arrow-left"></i> Cambiar Módulo
+                </button>
+                
+                <h2 id="titulo-test" style="color: #093c5c; font-size: 2.2rem; margin-bottom: 2rem; font-family: 'Poppins', sans-serif;"></h2>
+                
+                <form id="formulario-test">
+                    <div id="contenedor-preguntas"></div>
+                    <button type="submit" class="btn-premium-cta" style="width: 100%; margin-top: 1.5rem;">Procesar Evaluación</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="modal-resultado" class="modal modal-resultado-premium">
+        <div class="modal-contenido" style="text-align: center;">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <div id="icono-nivel" class="icono-resultado"></div>
+            <h2 id="titulo-resultado"></h2>
+            <p id="texto-resultado" style="font-size: 1.2rem; margin-top: 15px; color: #d1e9ea;"></p>
+            <button class="btn-premium-cta" style="background: #e2b22d; box-shadow: 0 5px 0 #c29620; margin-top: 2rem;" onclick="cerrarModal()">Entendido</button>
+        </div>
+    </div>
+
+    <script src="js/seguridad.js"></script>
+    <script src="js/evaluacion_certificacion.js"></script>
+</body>
+</html>

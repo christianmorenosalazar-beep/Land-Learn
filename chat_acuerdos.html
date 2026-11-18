@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase de Acuerdos - Land Learn</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="dolor_de_wbs.css">
+    <link rel="stylesheet" href="css/chat_acuerdos.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header style="height: 70px; background-color: white; padding: 0 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <span style="color: #093c5c; font-weight: 700; font-size: 1.6rem; font-family: 'Poppins', sans-serif;">Land</span><span style="color: #2ab5b9; font-size: 1.6rem; font-family: 'Poppins', sans-serif;">Learn</span>
+            <span style="color: #cbd5e1; margin: 0 10px;">|</span>
+            <span style="color: #64748b; font-weight: 600; font-size: 0.95rem;">Fase de Planeación 📝</span>
+        </div>
+        
+        <div style="display: flex; gap: 15px; align-items: center;">
+            
+            <button id="btn-generar-codigo" style="background: #2ab5b9; color: white; border: none; padding: 8px 18px; border-radius: 10px; font-weight: bold; cursor: pointer; font-family: 'Urbanist', sans-serif; transition: 0.3s;">
+                <i class="fa-solid fa-key"></i> Generar Código
+            </button>
+
+            <button onclick="window.location.href='my_perfil.html'" style="background: transparent; color: #093c5c; border: 2px solid #093c5c; padding: 8px 18px; border-radius: 10px; font-weight: bold; cursor: pointer; font-family: 'Urbanist', sans-serif; transition: 0.3s;" onmouseover="this.style.background='#093c5c'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#093c5c';">
+                <i class="fa-solid fa-arrow-left"></i> Volver
+            </button>
+        </div>
+    </header>
+
+    <main class="chat-acuerdos-layout">
+        <section class="panel-metas">
+            <div style="margin-bottom: 5px;">
+                <h2 style="color: #093c5c; font-family: 'Poppins', sans-serif; margin: 0; font-size: 1.5rem;">Objetivos del Trueque</h2>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <input type="text" id="txt-nueva-meta" class="input-texto" placeholder="Añadir meta..." style="border-radius: 12px; font-size: 0.9rem;">
+                <button id="btn-agregar-meta" style="background: #093c5c; color: white; border: none; padding: 0 15px; border-radius: 12px; cursor: pointer;">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+            <div class="sub-panel-tareas">
+                <h3 style="color: #093c5c; font-family: 'Poppins', sans-serif; margin-top: 0; margin-bottom: 15px; font-size: 1.05rem;"><i class="fa-regular fa-clock" style="color: #2ab5b9;"></i> Por hacer</h3>
+                <div id="contenedor-tareas-pendientes">
+                    <p style="color: #94a3b8; font-size: 0.9rem; text-align:center; font-style: italic;">Cargando tareas...</p>
+                </div>
+            </div>
+
+            <div class="sub-panel-tareas completadas">
+                <h3 style="color: #093c5c; font-family: 'Poppins', sans-serif; margin-top: 0; margin-bottom: 15px; font-size: 1.05rem;"><i class="fa-regular fa-circle-check" style="color: #fbbf24;"></i> Completadas</h3>
+                <div id="contenedor-tareas-completadas">
+                    <p style="color: #94a3b8; font-size: 0.9rem; text-align:center; font-style: italic;">Cargando historial...</p>
+                </div>
+            </div>
+
+            <div style="margin-top: auto;">
+                <div id="caja-codigo-sala" style="display: none; background: #e0f2f1; border: 1px dashed #2ab5b9; padding: 15px; border-radius: 12px; margin-bottom: 15px; text-align: center;">
+                    <p style="margin: 0; color: #0d9488; font-size: 0.9rem;">Llave de acceso de la Sala:</p>
+                    <h3 id="texto-codigo-sala" style="margin: 5px 0 0 0; color: #093c5c; font-family: 'Poppins', sans-serif; letter-spacing: 3px; font-size: 1.5rem;"></h3>
+                </div>
+
+                <button id="btn-entrar-sala" class="btn-entrar-sala">
+                    <i class="fa-solid fa-video"></i> Ir a la Sala Segura
+                </button>
+            </div>
+        </section>
+
+        <aside class="panel-mensajero">
+            <div class="mensajero-header">
+                <h4 style="margin: 0; color: #093c5c; font-family: 'Poppins', sans-serif;">Canal de Negociación</h4>
+            </div>
+            <div class="mensajero-cuerpo" id="historial-texto"></div>
+            <div class="mensajero-input-area">
+                <input type="text" class="input-texto" placeholder="Escribe un mensaje..." id="txt-mensaje">
+                <button id="btn-enviar-msg" class="btn-enviar-msg"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </aside>
+    </main>
+
+    <script src="js/seguridad.js"></script>
+    <script src="js/polling.js"></script>
+    <script src="js/chat_acuerdos.js"></script>
+</body>
+</html>

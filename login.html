@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Land Learn</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="dolor_de_wbs.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background-color: #f4f9f9; font-family: 'Urbanist', sans-serif; display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
+
+    <header style="background-color: white; padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(9, 60, 92, 0.04);">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="img/logo.png" alt="Logo" style="width: 40px;">
+            <span style="color: #093c5c; font-weight: 700; font-size: 1.8rem; font-family: 'Poppins', sans-serif;">Land</span><span style="color: #2ab5b9; font-size: 1.8rem; font-family: 'Poppins', sans-serif;">Learn</span>
+        </div>
+        <nav>
+            <a href="index2.html" style="text-decoration: none; color: #64748b; font-weight: 600;"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+        </nav>
+    </header>
+
+    <main style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 2rem;">
+        <div style="background: white; padding: 3rem; border-radius: 15px; width: 100%; max-width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 6px solid #093c5c;">
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="color: #093c5c; font-family: 'Poppins', sans-serif; font-size: 2.2rem; margin: 0;">Bienvenido de nuevo 🍄</h2>
+                <p style="color: #64748b; font-size: 1.05rem;">Ingresa a la Red Mycelium.</p>
+            </div>
+
+            <form action="php/login_back.php" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                    <label for="correo" style="color: #093c5c; font-weight: 600; display: block; margin-bottom: 0.5rem;"><i class="fa-regular fa-envelope"></i> Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required style="width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: 'Urbanist', sans-serif; font-size: 1rem;">
+                </div>
+                
+                <div>
+                    <label for="password" style="color: #093c5c; font-weight: 600; display: block; margin-bottom: 0.5rem;"><i class="fa-solid fa-lock"></i> Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="********" required style="width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: 'Urbanist', sans-serif; font-size: 1rem;">
+                </div>
+                
+                <button type="submit" style="width: 100%; padding: 16px; background-color: #2ab5b9; color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 1.1rem; margin-top: 1rem; font-family: 'Urbanist', sans-serif; transition: 0.3s;">
+                    Entrar al Tablero
+                </button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <p style="color: #64748b; font-size: 0.95rem;">
+                    ¿Olvidaste tu contraseña? <a href="recuperar.html" style="color: #2ab5b9; font-weight: 700; text-decoration: none;">Recupérala aquí</a>
+                </p>
+                <p style="color: #64748b; font-size: 0.95rem; margin-top: 10px;">
+                    ¿Aún no eres una Espora? <a href="registro.html" style="color: #093c5c; font-weight: 700; text-decoration: none;">Crea tu cuenta</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            const form = document.querySelector('form');
+            let msg = document.createElement('p');
+            msg.style.color = "#ef4444";
+            msg.style.fontWeight = "bold";
+            msg.style.textAlign = "center";
+            msg.innerText = urlParams.get('error') === 'pass' ? "❌ Contraseña incorrecta." : "❌ Correo no encontrado.";
+            form.prepend(msg);
+        }
+    </script>
+    <script src="js/seguridad.js"></script>
+</body>
+</html>

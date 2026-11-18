@@ -1,0 +1,174 @@
+/* responsive.css - adaptacion a celular, tablet y escritorio */
+
+html { -webkit-text-size-adjust: 100%; }
+
+img, video, canvas, svg { max-width: 100%; height: auto; }
+
+table { max-width: 100%; }
+
+input, select, textarea, button {
+    max-width: 100%;
+    font-family: inherit;
+}
+
+/* ── TABLET: hasta 900px ─────────────────────────── */
+@media (max-width: 900px) {
+
+    .lobby-grid,
+    .contenedor-perfil,
+    .grid-dos-columnas,
+    .dashboard-grid,
+    .perfil-layout {
+        flex-direction: column !important;
+        display: flex !important;
+    }
+
+    .lobby-col-right,
+    .lobby-col-left,
+    .columna-lateral,
+    .columna-principal {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .sala-interactive-grid {
+        flex-direction: column !important;
+        overflow-y: auto !important;
+    }
+
+    .video-grid-container { min-height: 220px; }
+
+    .chat-panel {
+        min-height: 300px;
+        min-width: 0 !important;
+    }
+
+    nav a { font-size: .85rem; }
+}
+
+/* ── CELULAR: hasta 640px ────────────────────────── */
+@media (max-width: 640px) {
+
+    body { font-size: 15px; }
+
+    h1 { font-size: 1.5rem !important; }
+    h2 { font-size: 1.25rem !important; }
+    h3 { font-size: 1.05rem !important; }
+
+    /* Contenedores y tarjetas ocupan todo el ancho */
+    .lobby-card,
+    .tarjeta-perfil,
+    .modal-card,
+    .contenedor,
+    .card,
+    .caja {
+        padding: 16px !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Navegacion apilada */
+    header, .lobby-header, .header-principal, nav {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        padding: 10px 14px !important;
+    }
+    .lobby-nav-links,
+    .nav-links {
+        width: 100%;
+        display: flex !important;
+        justify-content: space-around !important;
+        gap: 4px !important;
+    }
+    .lobby-nav-links a,
+    .nav-links a {
+        margin-left: 0 !important;
+        font-size: .78rem !important;
+        padding: 5px 8px !important;
+    }
+
+    /* Grids a una sola columna */
+    .eval-grid,
+    .grid-tarjetas,
+    .contenedor-resultados,
+    #contenedor-resultados,
+    .video-grid-container,
+    .cupos-row {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Sala en celular */
+    .sala-wrapper { flex-direction: column !important; }
+    .sala-sidebar-right {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        padding: 10px 0 !important;
+        border-left: none !important;
+        border-top: 1px solid rgba(42,181,185,.2) !important;
+        order: 2;
+    }
+    .sala-sidebar-right .sidebar-logo { display: none; }
+    .sidebar-icons {
+        flex-direction: row !important;
+        gap: 26px !important;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .sala-main-area { order: 1; min-height: 0; }
+    .video-box { min-height: 150px; }
+    .sala-top-banner { padding: 9px 12px !important; }
+    .banner-title { font-size: .88rem !important; }
+
+    /* Botones y campos comodos para el dedo */
+    button, .btn, .btn-primary-action, input, select, textarea {
+        min-height: 44px;
+        font-size: 16px !important;   /* evita el zoom automatico en iOS */
+    }
+
+    /* Tablas con scroll horizontal */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Modales pegados a los bordes */
+    .modal-overlay > div,
+    #modal-editar-perfil > div,
+    #modal-evaluacion > div {
+        width: 94% !important;
+        margin: 0 auto;
+        padding: 20px !important;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    /* Perfil */
+    .foto-perfil { width: 90px !important; height: 90px !important; }
+    .cabecera-perfil { flex-direction: column !important; text-align: center; gap: 10px; }
+}
+
+/* ── CELULAR CHICO: hasta 400px ──────────────────── */
+@media (max-width: 400px) {
+    .lobby-card, .tarjeta-perfil, .caja { padding: 12px !important; }
+    .lobby-nav-links a, .nav-links a { font-size: .72rem !important; }
+    h1 { font-size: 1.3rem !important; }
+}
+
+/* ── ESCRITORIO ANCHO: 1400px o mas ──────────────── */
+@media (min-width: 1400px) {
+    .contenedor, .lobby-card { max-width: 1180px; margin-left: auto; margin-right: auto; }
+}
+
+/* ── ORIENTACION HORIZONTAL EN CELULAR ───────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+    .sala-top-banner { padding: 5px 12px !important; }
+    .video-box { min-height: 110px; }
+    header, nav { padding: 6px 14px !important; }
+}

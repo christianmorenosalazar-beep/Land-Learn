@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu Cuenta - Land Learn</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header>
+       <div class="logo">
+          <span class="logo-land">Land</span><span class="logo-learn">Learn</span>
+       </div>
+    </header>
+
+    <div class="registro-full-screen">
+        
+        <div class="panel-izquierdo-info">
+            <div class="forma-fondo forma-1"></div>
+            <div class="forma-fondo forma-2"></div>
+            
+            <div class="info-contenido">
+
+                       <div class="botones-secundarios">
+                         <a href="index2.html" class="btn-outline-blanco"><i class="fa-solid fa-house"></i> Volver al Inicio</a>
+                         
+                         <a href="dashboard.html" class="btn-text-blanco">¿Dudas? Conócenos <i class="fa-solid fa-arrow-right"></i></a>
+                      </div>
+<br>
+                <h2>Únete a la red Micelio</h2>
+                <p>Crea tu cuenta oficial y comienza a intercambiar conocimiento en la comunidad de Land Learn.</p>
+            </div>
+        </div>
+
+        <div class="panel-derecho-formulario">
+            <div class="formulario-scroll-wrapper">
+                <h3>Regístrate</h3>
+
+                
+                <div id="aviso-registro" style="display:none; margin-bottom:16px; padding:12px 16px;
+                     border-radius:10px; font-size:.92rem; font-weight:600; line-height:1.4;"></div>
+                <form action="php/registro_back.php" method="POST">
+                    
+                    <div class="grupo-input">
+                        <label for="nombre"><i class="fa-regular fa-user"></i> Nombre(s)</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="apellido_paterno"><i class="fa-regular fa-user"></i> Apellido Paterno</label>
+                        <input type="text" id="apellido_paterno" name="apellido_paterno" placeholder="Tu apellido paterno" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="apellido_materno"><i class="fa-regular fa-user"></i> Apellido Materno</label>
+                        <input type="text" id="apellido_materno" name="apellido_materno" placeholder="Tu apellido materno (Opcional)">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="fecha"><i class="fa-regular fa-calendar"></i> Fecha de Nacimiento</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="correo"><i class="fa-regular fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="pass"><i class="fa-solid fa-lock"></i> Contraseña</label>
+                        <div class="pass-wrapper">
+                            <input type="password" id="pass" name="password" placeholder="********" required>
+                            <button type="button" id="btn-toggle" class="btn-toggle-eye">
+                                <i id="eyeIcon" class="fa-regular fa-eye-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="habilidad"><i class="fa-solid fa-graduation-cap"></i> Habilidad Principal a Enseñar</label>
+                        <select id="habilidad" name="habilidad" required>
+                            <option value="" disabled selected>Selecciona tu área</option>
+                            <option value="digital">Digital / IT</option>
+                            <option value="tecnico">Técnico / Oficios</option>
+                            <option value="artes">Artes Creativas</option>
+                            <option value="idiomas">Idiomas</option>
+                        </select>
+                    </div>
+
+                    
+                        <div style="display:flex; align-items:flex-start; gap:10px; margin:16px 0;">
+                            <input type="checkbox" id="acepto-privacidad" name="acepto_privacidad" required
+                                   style="width:18px; height:18px; margin-top:3px; accent-color:#2ab5b9; flex-shrink:0;">
+                            <label for="acepto-privacidad" style="color:#64748b; font-size:0.88rem; line-height:1.5; cursor:pointer;">
+                                He leído y acepto el
+                                <a href="aviso_privacidad.html" target="_blank" style="color:#2ab5b9; font-weight:bold;">
+                                    Aviso de Privacidad
+                                </a>
+                                de Land Learn. Entiendo cómo se tratarán mis datos personales.
+                            </label>
+                        </div><button type="submit" class="btn-full">Crea tu Cuenta</button>
+
+                    <p class="login-link">¿Ya tienes una cuenta? <a href="index2.html">Iniciar Sesión</a></p>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="js/seguridad.js"></script>
+    <script src="js/registro.js"></script>
+
+    <script>
+    (function () {
+        const MENSAJES = {
+            faltan:          'Faltan datos obligatorios. Revisa el formulario.',
+            correo_invalido: 'El correo no tiene un formato valido.',
+            pass_corta:      'La contrasena debe tener al menos 6 caracteres.',
+            duplicado:       'Esta espora ya esta germinada. Usa otro correo o inicia sesion.',
+            bd:              'No se pudo crear la cuenta. Intenta de nuevo en un momento.'
+        };
+        const clave = new URLSearchParams(window.location.search).get('error');
+        if (!clave) return;
+        const caja = document.getElementById('aviso-registro');
+        if (!caja) return;
+        caja.textContent      = MENSAJES[clave] || 'Ocurrio un error. Intenta de nuevo.';
+        caja.style.display    = 'block';
+        caja.style.background = '#fef2f2';
+        caja.style.color      = '#b91c1c';
+        caja.style.border     = '1px solid #fecaca';
+        caja.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })();
+    </script>
+</body>
+</html>

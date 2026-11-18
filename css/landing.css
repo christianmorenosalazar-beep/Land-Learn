@@ -1,0 +1,32 @@
+5. PANTALLA DE INICIO (Landing Page Premium)
+.eval-hero {
+    background: linear-gradient(135deg, #093c5c 0%, #007090 100%);
+    color: var(--white);
+    padding: 4rem 2rem 6rem 2rem;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: -4rem; 
+    box-shadow: 0 10px 30px rgba(9, 60, 92, 0.3);
+    position: relative;
+}
+.eval-hero::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(circle at 80% 20%, rgba(0, 209, 193, 0.2), transparent);
+    border-radius: 0 0 50px 50px; pointer-events: none;
+}
+
+.index-cards-container {
+    max-width: 1000px; margin: -6rem auto 4rem auto; background: var(--white);
+    border-radius: 30px; box-shadow: 0 20px 50px rgba(9, 60, 92, 0.1);
+    padding: 4rem; border-top: 8px solid #00D1C1; position: relative; z-index: 10;
+}
+.index-cards-container h2 {
+    color: #093c5c; font-family: 'Poppins', sans-serif; font-size: 2.2rem; text-align: center; margin-top: 0; margin-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+    .index-cards-container { margin: -4rem 1.5rem 2rem 1.5rem; padding: 2.5rem 1.5rem; }
+    .index-cards-container h2 { font-size: 1.8rem; margin-bottom: 2rem; }
+    .btn-premium-cta, .btn-premium-secundario { width: 100%; box-sizing: border-box; text-align: center; margin-bottom: 10px; }
+    .eval-hero div { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto; }
+}

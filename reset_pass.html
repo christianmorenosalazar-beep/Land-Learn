@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Contraseña | Land Learn</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div style="max-width: 400px; margin: 50px auto; text-align: center; font-family: Arial;">
+        <h2>Crear Nueva Contraseña</h2>
+        <p>Asegúrate de no olvidarla esta vez.</p>
+        
+        <form id="form-reset">
+            <input type="password" id="pass1" placeholder="Escribe tu nueva contraseña" required style="width: 90%; padding: 10px; margin-bottom: 15px;"><br>
+            <input type="password" id="pass2" placeholder="Confirma tu contraseña" required style="width: 90%; padding: 10px; margin-bottom: 15px;"><br>
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #2ab5b9; color: white; border: none; font-weight: bold;">Actualizar Contraseña</button>
+        </form>
+
+        <div id="mensaje-reset" style="margin-top: 15px; font-weight: bold;"></div>
+    </div>
+
+    <script src="js/seguridad.js"></script>
+    <script src="js/reset_pass.js"></script>
+</body>
+</html>

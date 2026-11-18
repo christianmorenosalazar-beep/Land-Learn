@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de Privacidad — Land Learn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --cyan:#2ab5b9; --dark:#093c5c; --gray:#64748b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Urbanist', sans-serif; background: #f0fafb; color: #1e293b; line-height: 1.7; }
+        header { background: var(--dark); padding: 18px 40px; display:flex; align-items:center; gap:12px; }
+        header span.land { color: white; font-family:'Poppins'; font-weight:700; font-size:1.4rem; }
+        header span.learn { color: var(--cyan); font-family:'Poppins'; font-weight:700; font-size:1.4rem; }
+        main { max-width: 860px; margin: 40px auto; background:white; border-radius:16px; padding:50px 60px; box-shadow:0 8px 30px rgba(9,60,92,.06); }
+        h1 { color: var(--dark); font-family:'Poppins'; font-size:2rem; margin-bottom:6px; }
+        .meta { color: var(--gray); font-size:.9rem; margin-bottom:36px; }
+        h2 { color: var(--cyan); font-family:'Poppins'; font-size:1.1rem; margin:32px 0 10px; border-left:4px solid var(--cyan); padding-left:12px; }
+        p { color:#374151; margin-bottom:14px; font-size:.97rem; }
+        ul { padding-left:24px; margin-bottom:14px; }
+        li { color:#374151; font-size:.97rem; margin-bottom:6px; }
+        .highlight { background:#f0fafb; border:1px solid #d1e9ea; border-radius:10px; padding:16px 20px; margin:20px 0; }
+        .highlight strong { color:var(--dark); }
+        footer-bar { display:block; text-align:center; padding:28px; color:var(--gray); font-size:.85rem; }
+        .btn-back { display:inline-block; margin-top:30px; background:var(--cyan); color:white; padding:10px 24px; border-radius:8px; text-decoration:none; font-weight:700; }
+    </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header>
+    <span class="land">Land</span><span class="learn">Learn</span>
+</header>
+
+<main>
+    <h1>Aviso de Privacidad</h1>
+    <p class="meta">Última actualización: Julio 2025 &nbsp;·&nbsp; Versión 1.0</p>
+
+    <div class="highlight">
+        <strong>Land Learn</strong> es una plataforma educativa de trueque de conocimientos desarrollada como
+        proyecto académico integrador. El tratamiento de datos personales se realiza con apego a los
+        principios establecidos en la <strong>Ley Federal de Protección de Datos Personales en Posesión
+        de los Particulares (LFPDPPP)</strong> de los Estados Unidos Mexicanos.
+    </div>
+
+    <h2>1. Responsable del Tratamiento</h2>
+    <p>El equipo de desarrollo de Land Learn, integrado por <strong>Christian Moreno Salazar</strong>
+    (Líder Técnico), <strong>Paola Gonzales Estrada</strong> (Diseño UI/UX) y <strong>Fernando Rojas
+    Camargo</strong> (Documentación y Análisis), es responsable del tratamiento de sus datos personales
+    en el marco del proyecto académico integrador.</p>
+
+    <h2>2. Datos Personales Recabados</h2>
+    <p>Para el correcto funcionamiento de la plataforma, recabamos los siguientes datos:</p>
+    <ul>
+        <li><strong>Identificación:</strong> Nombre completo, apellidos y fecha de nacimiento.</li>
+        <li><strong>Contacto:</strong> Dirección de correo electrónico (usada como llave de acceso).</li>
+        <li><strong>Credenciales:</strong> Contraseña almacenada con cifrado <em>bcrypt</em> (password_hash). Nunca se guarda en texto plano.</li>
+        <li><strong>Perfil académico:</strong> Biografía, habilidades ofrecidas, intereses de aprendizaje y nivel de experiencia (Espora, Micelio, Fructificación).</li>
+        <li><strong>Actividad:</strong> Registro de intercambios de conocimiento, calificaciones emitidas/recibidas y mensajes de chat internos.</li>
+    </ul>
+
+    <h2>3. Finalidades del Tratamiento</h2>
+    <ul>
+        <li>Crear y gestionar tu cuenta de usuario en la plataforma.</li>
+        <li>Facilitar el emparejamiento (<em>matchmaking</em>) entre usuarios con habilidades complementarias.</li>
+        <li>Habilitar los canales de comunicación privados (chat y sala de trueque) entre participantes de un intercambio.</li>
+        <li>Calcular y actualizar los puntos de experiencia (XP) y el rango evolutivo del usuario.</li>
+        <li>Administrar reportes de conducta y garantizar la seguridad de la comunidad.</li>
+        <li>Fines estadísticos y académicos propios del proyecto integrador.</li>
+    </ul>
+
+    <h2>4. Transferencia de Datos</h2>
+    <p>Land Learn <strong>no vende, transfiere ni cede</strong> datos personales a terceros con fines
+    comerciales. Los datos únicamente se utilizan para las finalidades descritas en este aviso.
+    La plataforma integra el servicio de videoconferencia <strong>Jitsi Meet</strong> (meet.jit.si),
+    al cual se accede mediante un enlace generado dinámicamente; Land Learn no comparte información
+    personal con dicho servicio más allá del nombre de la sala.</p>
+
+    <h2>5. Seguridad de la Información</h2>
+    <ul>
+        <li>Las contraseñas se almacenan exclusivamente en formato cifrado (<em>bcrypt</em>).</li>
+        <li>El acceso al panel administrativo está restringido por lista blanca (<em>whitelist</em>) de correo electrónico.</li>
+        <li>Los chats están aislados por ID de intercambio; ningún usuario puede acceder a conversaciones ajenas.</li>
+        <li>Las salas de estudio están protegidas por códigos de acceso de 4 dígitos generados aleatoriamente.</li>
+        <li>El servidor funciona en entorno XAMPP local durante la fase de desarrollo académico.</li>
+    </ul>
+
+    <h2>6. Derechos ARCO</h2>
+    <p>El titular de los datos tiene derecho de <strong>Acceso, Rectificación, Cancelación y Oposición (ARCO)</strong>
+    al tratamiento de sus datos personales. Para ejercer cualquiera de estos derechos, el usuario puede:</p>
+    <ul>
+        <li>Actualizar su información directamente desde la sección <em>"Editar Perfil"</em> en <code>my_perfil.html</code>.</li>
+        <li>Solicitar la eliminación de su cuenta al administrador del sistema a través del correo del responsable técnico del proyecto.</li>
+    </ul>
+
+    <h2>7. Uso de Cookies y Sesiones</h2>
+    <p>La plataforma utiliza <strong>sesiones de PHP</strong> (almacenadas en el servidor) para mantener
+    autenticado al usuario durante su visita. No se emplean cookies de rastreo ni publicidad.</p>
+
+    <h2>8. Modificaciones al Aviso</h2>
+    <p>Land Learn se reserva el derecho de actualizar este Aviso de Privacidad en cualquier momento.
+    Los cambios serán notificados mediante la actualización de la fecha indicada al inicio del documento.
+    El uso continuado de la plataforma implica la aceptación de las modificaciones.</p>
+
+    <h2>9. Consentimiento</h2>
+    <p>Al crear una cuenta en Land Learn y marcar la casilla de aceptación durante el registro, el usuario
+    manifiesta haber leído, entendido y aceptado los términos del presente Aviso de Privacidad.</p>
+
+    <a href="index2.html" class="btn-back">← Volver al inicio</a>
+</main>
+
+<footer-bar>Land Learn &copy; 2025 — Proyecto Integrador &nbsp;·&nbsp; Todos los derechos reservados</footer-bar>
+
+    <script src="js/seguridad.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzón de Solicitudes - Land Learn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="dolor_de_wbs.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background-color: #f4f9f9; font-family: 'Urbanist', sans-serif; margin: 0;">
+
+    <header style="background-color: white; padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(9, 60, 92, 0.04);">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="img/logo.png" alt="Logo Land Learn" style="width: 40px; border-radius: 8px;">
+            <span style="color: #093c5c; font-weight: 700; font-size: 1.8rem; font-family: 'Poppins', sans-serif;">Land</span><span style="color: #2ab5b9; font-size: 1.8rem; font-family: 'Poppins', sans-serif;">Learn</span>
+        </div>
+        <nav style="display: flex; gap: 2rem;">
+            <a href="dashboard.html" style="text-decoration: none; color: #64748b; font-weight: 600;">Radar</a>
+            <a href="my_perfil.html" style="text-decoration: none; color: #64748b; font-weight: 600;">Mi Perfil</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 700px; margin: 3rem auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h1 style="color: #093c5c; font-family: 'Poppins', sans-serif; font-size: 2.4rem; margin-bottom: 5px;">Buzón de Solicitudes 🍄</h1>
+            <p style="color: #64748b; font-size: 1.1rem;">Gestiona las esporas de conocimiento que quieren conectar contigo.</p>
+        </div>
+
+        <div id="contenedor-solicitudes" style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="text-align:center; padding: 3rem;">
+                <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: #2ab5b9;"></i>
+                <p style="color: #64748b; margin-top: 1rem;">Consultando tu buzón...</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/seguridad.js"></script>
+    <script src="js/notificaciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+10. MODAL LOGIN PREMIUM E INPUTS
+.grupo-input-premium { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.5rem; text-align: left;}
+.grupo-input-premium label { color: #093c5c; font-weight: bold; font-size: 1rem; }
+.grupo-input-premium label i { margin-right: 6px; color: #2ab5b9; }
+.grupo-input-premium input {
+    width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px;
+    background-color: #fdfdfd; color: #1e293b; font-size: 1rem; outline: none; transition: 0.2s; box-sizing: border-box;
+}
+.grupo-input-premium input:focus { border-color: #00D1C1; box-shadow: 0 0 0 4px rgba(0, 209, 193, 0.15); background-color: var(--white); }
+
+.modal {
+    display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 18, 32, 0.8); backdrop-filter: blur(8px); align-items: center; justify-content: center;
+}
+.modal-contenido {
+    background: var(--white); padding: 3.5rem 3rem; border-radius: 30px; width: 90%; max-width: 450px;
+    position: relative; border-top: 8px solid #00D1C1; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: center;
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.cerrar-modal { color: #64748b; position: absolute; top: 20px; right: 25px; font-size: 32px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.cerrar-modal:hover { color: #ef4444; transform: scale(1.1); }

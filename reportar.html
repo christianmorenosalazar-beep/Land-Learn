@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Usuario - Land Learn</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fef2f2; padding: 20px; }
+        .report-container { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; border-top: 5px solid #dc2626; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #dc2626; margin-top: 0;}
+        textarea { width: 100%; height: 120px; padding: 10px; border: 1px solid #fca5a5; border-radius: 5px; margin-bottom: 15px; resize: none;}
+        .btn-reportar { background: #dc2626; color: white; border: none; padding: 12px; width: 100%; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        .btn-reportar:hover { background: #b91c1c; }
+        input[type="number"] { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;}
+    </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div class="report-container">
+        <h2>⚠️ Botón de Pánico (Reporte)</h2>
+        <p>¿Tuviste una mala experiencia en tu trueque? Nuestro equipo de moderación revisará el caso.</p>
+        <hr style="border: 0; border-top: 1px solid #fee2e2; margin-bottom: 20px;">
+
+        <!-- El action manda la queja directo al PHP que ya creamos -->
+        
+        <div id="aviso-reporte" style="display:none; margin-bottom:14px; padding:12px 16px;
+             border-radius:10px; font-size:.92rem; font-weight:600;"></div>
+        <form id="form-reporte">
+            
+            <!-- Para no complicar la UI ahorita, le pedimos el ID del usuario malo manual,
+                 en el futuro esto se inyecta por JS -->
+            <label><b>ID del usuario a reportar:</b></label><br>
+            <input type="number" name="reportado_id" placeholder="Ej: 2" required>
+            
+            <label><b>Explica detalladamente qué sucedió:</b></label><br>
+            <textarea name="motivo" placeholder="Escribe el motivo del reporte (Spam, acoso, fraude, etc.)..." required></textarea>
+            
+            <button type="submit" class="btn-reportar">Enviar Reporte a Administración</button>
+        </form>
+        
+        <br>
+        <a href="my_perfil.html" style="color: #666; text-decoration: none;">Cancelar y volver al perfil</a>
+    </div>
+
+    <script src="js/seguridad.js"></script>
+
+    <script>
+    document.getElementById('form-reporte').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const boton = this.querySelector('button[type="submit"]');
+        const caja  = document.getElementById('aviso-reporte');
+        const textoOriginal = boton.textContent;
+
+        boton.disabled    = true;
+        boton.textContent = 'Enviando...';
+
+        function avisar(mensaje, ok) {
+            caja.textContent      = mensaje;
+            caja.style.display    = 'block';
+            caja.style.background = ok ? '#f0fdf4' : '#fef2f2';
+            caja.style.color      = ok ? '#15803d' : '#b91c1c';
+            caja.style.border     = '1px solid ' + (ok ? '#bbf7d0' : '#fecaca');
+        }
+
+        try {
+            const res  = await fetch('php/procesar_reporte.php', {
+                method: 'POST',
+                body: new FormData(this)
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                avisar('Reporte enviado. La administracion lo revisara.', true);
+                this.reset();
+            } else {
+                avisar(data.error || data.mensaje || 'No se pudo enviar el reporte.', false);
+            }
+        } catch (err) {
+            avisar('Error de conexion. Intenta de nuevo.', false);
+        }
+
+        boton.disabled    = false;
+        boton.textContent = textoOriginal;
+    });
+    </script>
+</body>
+</html>

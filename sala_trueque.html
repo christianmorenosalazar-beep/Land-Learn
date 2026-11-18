@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Learn - Sala de Trueque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/sala-trueque.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     LOBBY
+══════════════════════════════════════════════ -->
+<div id="lobby-container" class="lobby-wrapper">
+
+    <header class="lobby-header">
+        <div class="logo">
+            <span class="logo-bold">Land</span><span class="logo-light">Learn</span>
+        </div>
+        <nav class="lobby-nav-links">
+            <a href="dashboard.html"><i class="fa-solid fa-satellite-dish"></i> Volver al Radar</a>
+            <a href="my_perfil.html"><i class="fa-regular fa-user"></i> Mi Perfil</a>
+        </nav>
+    </header>
+
+    <main class="lobby-main-content">
+        <div class="lobby-card">
+            <h2 class="lobby-title">Configuración de Sala 🍄</h2>
+            <p class="lobby-subtitle">Estableciendo conexión para el intercambio de conocimientos.</p>
+
+            <div class="lobby-grid">
+
+                <!-- ══ IZQUIERDA: qué se enseñará ══ -->
+                <div class="lobby-col-left">
+
+                    <div id="panel-anfitrion" style="display:none;">
+
+                        <div class="lobby-form-group">
+                            <label for="select-categoria">📚 Categoría:</label>
+                            <select id="select-categoria" class="lobby-select">
+                                <option value="" disabled selected>Selecciona una categoría...</option>
+                            </select>
+                        </div>
+
+                        <div class="lobby-form-group">
+                            <label for="select-habilidad-sala">🎯 Habilidad específica:</label>
+                            <select id="select-habilidad-sala" class="lobby-select" disabled>
+                                <option value="" disabled selected>Primero elige una categoría...</option>
+                            </select>
+                        </div>
+
+                        <div class="lobby-form-group">
+                            <label for="select-subcategoria">🔍 Enfoque de la sesión:</label>
+                            <select id="select-subcategoria" class="lobby-select" disabled>
+                                <option value="" disabled selected>Primero elige una habilidad...</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div id="msg-espera-invitado" class="lobby-status-waiting" style="display:none;">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        Esperando a que el anfitrión configure y abra la sala...
+                    </div>
+
+                </div>
+
+                <!-- ══ DERECHA: cupos, tiempo y resumen ══ -->
+                <div class="lobby-col-right">
+
+                    <div id="config-anfitrion" style="display:none;">
+                        <label style="display:block; font-weight:600; color:#e2e8f0; font-size:.92rem; margin-bottom:8px;">
+                            👥 Cupos en la sala:
+                        </label>
+                        <div class="cupos-row">
+                            <div class="cupo-card activo" id="cupo-2" data-cupos="2">
+                                <div class="cupo-emoji">👤👤</div>
+                                <div class="cupo-label">2 personas</div>
+                                <div class="cupo-check">✓ Elegido</div>
+                            </div>
+                            <div class="cupo-card" id="cupo-4" data-cupos="4">
+                                <div class="cupo-emoji">👥👥</div>
+                                <div class="cupo-label">4 personas</div>
+                                <div class="cupo-check">✓ Elegido</div>
+                            </div>
+                        </div>
+
+                        <div class="lobby-form-group">
+                            <label for="select-tiempo">⏱ Duración de la sesión:</label>
+                            <select id="select-tiempo" class="lobby-select">
+                                <option value="30">30 minutos — Básico</option>
+                                <option value="45" selected>45 minutos — Recomendado</option>
+                                <option value="60">60 minutos — Profundo</option>
+                                <option value="0">Sin límite</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h3 class="summary-title">Resumen de la Sesión</h3>
+
+                    <!-- Esta caja tiene su propio scroll; el botón queda fuera -->
+                    <div id="resumen-contenido" class="summary-box">
+                        <p><strong>Anfitrión:</strong> <span id="resumen-host-nombre">---</span></p>
+                        <p><strong>Invitado:</strong> <span id="resumen-guest-nombre">---</span></p>
+                        <div class="summary-divider"></div>
+                        <p id="resumen-tema-txt">Selecciona una habilidad para visualizar el temario de la sesión.</p>
+                    </div>
+
+                    <!-- El botón SIEMPRE visible, fuera del área con scroll -->
+                    <button id="btn-iniciar-sala" class="btn-primary-action" style="display:none;">
+                        <i class="fa-solid fa-door-open"></i> Abrir Sala de Trueque
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SALA ACTIVA
+══════════════════════════════════════════════ -->
+<div id="sala-container" class="sala-wrapper" style="display:none;">
+
+    <div class="sala-main-area">
+
+        <div class="sala-top-banner">
+            <div id="texto-contexto-sala" class="banner-title">Sincronizando sesión...</div>
+            <div id="lista-conceptos-contexto" class="banner-subconcepts"></div>
+        </div>
+
+        <div class="sala-interactive-grid">
+
+            <!-- El JS llena esto SOLO con los usuarios realmente presentes -->
+            <div class="video-grid-container" id="video-grid-container"></div>
+
+            <div class="chat-panel">
+                <div class="chat-header-tab">
+                    <i class="fa-solid fa-comments"></i> Chat del Trueque
+                </div>
+                <div id="caja-mensajes-sala" class="chat-messages-area"></div>
+                <div class="chat-input-bar">
+                    <input type="text" id="txt-mensaje-sala" placeholder="Escribe un mensaje..." autocomplete="off">
+                    <button id="btn-enviar-sala"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sala-controls-bar">
+            <button class="ctrl-btn" title="Micrófono"><i class="fa-solid fa-microphone"></i></button>
+            <button class="ctrl-btn" title="Cámara"><i class="fa-solid fa-video"></i></button>
+            <button class="ctrl-btn" title="Compartir pantalla"><i class="fa-solid fa-desktop"></i></button>
+            <button class="ctrl-btn btn-danger" id="btn-salir-sala" title="Finalizar Trueque">
+                <i class="fa-solid fa-phone-slash"></i>
+            </button>
+        </div>
+    </div>
+
+    <aside class="sala-sidebar-right">
+        <div class="sidebar-logo">LL</div>
+        <nav class="sidebar-icons">
+            <a href="dashboard.html" title="Radar"><i class="fa-solid fa-satellite-dish"></i></a>
+            <a href="my_perfil.html" title="Mi Perfil"><i class="fa-regular fa-user"></i></a>
+            <a href="notificaciones.html" title="Buzón"><i class="fa-regular fa-bell"></i></a>
+            <button id="btn-sidebar-exit" class="icon-exit" title="Salir">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </nav>
+    </aside>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     MODAL EVALUACIÓN
+══════════════════════════════════════════════ -->
+<div id="modal-evaluacion" class="modal-overlay" style="display:none;">
+    <div class="modal-card">
+        <h2>Sala Finalizada 🍄</h2>
+        <p id="modal-eval-desc">Evalúa la sesión para otorgar experiencia (XP).</p>
+
+        <form id="form-evaluacion">
+            <select name="puntuacion" id="select-puntuacion" class="modal-select">
+                <option value="5">⭐⭐⭐⭐⭐ Excelente (+50 XP al maestro)</option>
+                <option value="4">⭐⭐⭐⭐ Muy Bueno (+40 XP)</option>
+                <option value="3">⭐⭐⭐ Bueno (+30 XP)</option>
+                <option value="2">⭐⭐ Regular (+20 XP)</option>
+                <option value="1">⭐ Necesita Mejorar (+10 XP)</option>
+            </select>
+
+            <textarea name="comentario" id="txt-comentario-eval" rows="3"
+                      placeholder="Deja un comentario para tu compañero..."></textarea>
+
+            <button type="submit" class="btn-primary-action">Enviar Evaluación y Salir</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/seguridad.js"></script>
+<script src="js/polling.js"></script>
+    <script src="js/sala-trueque.js"></script>
+</body>
+</html>
